@@ -32,19 +32,22 @@ const App = () => {
 
   const handleSubmit = (e) =>{
     console.log("submit button clicked");
-    console.log(uName);
-    console.log(eMail);
-    console.log(gender);
-    console.log(phone);
-    console.log(password);
+    // console.log(uName);
+    // console.log(eMail);
+    // console.log(gender);
+    // console.log(phone);
+    // console.log(password);
     if(!uName || !eMail || !phone ||!password){
       setErrormsg("All fields are mandatory");
       e.preventDefault();
+      return;
     }
     else{
-      setErrormsg("Hello"+eMail);
+      var name = eMail.substring(0, eMail.lastIndexOf("@"));
+      setErrormsg("Hello "+name);
+      e.preventDefault();
     }
-    
+    console.log("submitted")
   }
   return (
     <div id="main">
