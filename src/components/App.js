@@ -37,8 +37,13 @@ const App = () => {
     // console.log(gender);
     // console.log(phone);
     // console.log(password);
-    if(!uName || !eMail || !phone ||!password){
+    if(!uName || !eMail || !phone || !password ){
       setErrormsg("All fields are mandatory");
+      e.preventDefault();
+      return;
+    }
+    else if(!uName .match(/^[0-9a-z]+$/)){
+      setErrormsg("Name is not alphanumeric");
       e.preventDefault();
       return;
     }
