@@ -41,6 +41,12 @@ const App = () => {
       setErrormsg("All fields are mandatory");
       e.preventDefault();
     }
+    else{
+      var name = eMail.substring(0, eMail.lastIndexOf("@"));
+      setErrormsg("Hello "+name);
+      e.preventDefault();
+    }
+    
   }
   return (
     <div id="main">
