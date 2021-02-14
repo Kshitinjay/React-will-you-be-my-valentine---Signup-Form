@@ -42,8 +42,13 @@ const App = () => {
       e.preventDefault();
       return;
     }
-    else if(!uName .match(/^[0-9a-z]+$/)){
+    else if(!uName.match(/^[0-9a-z]+$/)){
       setErrormsg("Name is not alphanumeric");
+      e.preventDefault();
+      return;
+    }
+    else if(!eMail.match(/\S+@\S+\.\S+/)){
+      setErrormsg("Email must contain @");
       e.preventDefault();
       return;
     }
