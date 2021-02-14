@@ -42,9 +42,7 @@ const App = () => {
       e.preventDefault();
     }
     else{
-      var name = eMail.substring(0, eMail.lastIndexOf("@"));
-      setErrormsg("Hello "+name);
-      e.preventDefault();
+      setErrormsg("Hello"+eMail);
     }
     
   }
